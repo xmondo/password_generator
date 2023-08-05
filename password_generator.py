@@ -7,12 +7,15 @@ class RandomCombo:
     def word_integer_combination(self):
         import random
         from random_word import RandomWords
+        import colorize as clr
+        blu = clr.Color('bx').set_color()
+        reset = clr.Color(None).set_color()
         rw = RandomWords()
         print()
         for k in range(0, self.quantity):
             ni = random.randint(self.lower_limit, self.upper_limit)
             pw = rw.get_random_word().capitalize() + '-' + str(ni) + '-' + rw.get_random_word().capitalize() + '-' + rw.get_random_word().capitalize()
-            print(pw)
+            print(blu + pw + reset)
         return print()
 
 
@@ -23,10 +26,15 @@ class RandomString:
 
     def random_secret(self):
         import secrets
+        import colorize as clr
+        red = clr.Color('rx').set_color()
+        reset = clr.Color(None).set_color()
+
         count = 0
         while count != self.quantity:
             charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&'
-            print(''.join(secrets.choice(charset) for _ in range(self.length)))
+            passwd_string = ''.join(secrets.choice(charset) for _ in range(self.length))
+            print(red + passwd_string + reset)
             count += 1
         return print()
 
