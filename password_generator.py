@@ -13,8 +13,10 @@ class RandomCombo:
         rw = RandomWords()
         print()
         for k in range(0, self.quantity):
-            ni = random.randint(self.lower_limit, self.upper_limit)
-            pw = rw.get_random_word().capitalize() + '-' + str(ni) + '-' + rw.get_random_word().capitalize() + '-' + rw.get_random_word().capitalize()
+            ri_1 = random.randint(self.lower_limit, self.upper_limit)
+            ri_2 = random.randint(self.lower_limit, self.upper_limit)
+            pw = (rw.get_random_word().capitalize() + '-' + str(ri_1) + '-' + rw.get_random_word().capitalize() +
+                  '-' + str(ri_2) + '-' + rw.get_random_word().capitalize())
             print(blu + pw + reset)
         return print()
 
@@ -41,7 +43,7 @@ class RandomString:
 
 if __name__ == '__main__':
     try:
-        RandomCombo(5, 19999, 99999).word_integer_combination()
+        RandomCombo(5, 1999999, 9999999).word_integer_combination()
         RandomString(5, 64).random_secret()
     except Exception as err:
         print(err)
