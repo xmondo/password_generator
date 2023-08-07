@@ -11,12 +11,15 @@ class RandomCombo:
         blu = clr.Color('bx').set_color()
         reset = clr.Color(None).set_color()
         rw = RandomWords()
+        random_characters = ['@', '#', '$', '%', '&', '!']
         print()
         for k in range(0, self.quantity):
-            ri_1 = random.randint(self.lower_limit, self.upper_limit)
-            ri_2 = random.randint(self.lower_limit, self.upper_limit)
-            pw = (rw.get_random_word().capitalize() + '-' + str(ri_1) + '-' + rw.get_random_word().capitalize() +
-                  '-' + str(ri_2) + '-' + rw.get_random_word().capitalize())
+            ri1 = random.randint(self.lower_limit, self.upper_limit)
+            rc1 = str(ri1) + str(random.choice(random_characters)) + str(random.choice(random_characters))
+            ri2 = random.randint(self.lower_limit, self.upper_limit)
+            rc2 = str(random.choice(random_characters)) + str(ri2) + str(random.choice(random_characters))
+            pw = (rw.get_random_word().capitalize() + '-' + str(rc1) + '-' + rw.get_random_word().capitalize() +
+                  '-' + str(rc2) + '-' + rw.get_random_word().capitalize())
             print(blu + pw + reset)
         return print()
 
@@ -59,6 +62,7 @@ class GetInputs:
 
         if lower_limit > upper_limit:
             print('lower limit must be less than upper limit')
+            # exit error 2: misuse of shell command
             sys.exit(2)
         else:
             return number_of_passwords, lower_limit, upper_limit, random_string_length
