@@ -76,3 +76,4 @@ if __name__ == '__main__':
         RandomString(q, rl).random_secret()
     except Exception as err:
         print(err)
+
