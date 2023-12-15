@@ -6,7 +6,7 @@ password_generator_opts.py is a script that generates a series of passwords usin
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies. 
 
-pip install colorize 
+pip install colorama
 
 pip install random-word
 
