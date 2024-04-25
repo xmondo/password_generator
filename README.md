@@ -12,13 +12,13 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install depende
 
 ## Usage
 
-`passwd_generator_opts.py number_of_passwords lower_limit upper_limit random_string_length`
+`passwd_generator_opts.py -n <number> -ll <lower_limit> -ul <upper_limit> -l <length>`
                      
 NOTE: lower_limit must be less than upper_limit 
 
 ## Example 
 
-`passwd_generator_opts.py 10 19999 99999 64`
+`passwd_generator_opts.py -n 10 -ll 19999 -ul 99999 -l 64`
 
 ## Note
 
