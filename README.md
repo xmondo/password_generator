@@ -6,9 +6,9 @@ password_gen.py is a script that generates a series of passwords using random wo
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies. 
 
-pip install colorama
+<code> pip install colorama </code>
 
-pip install random-word
+<code> pip install random-word </code>
 
 ## Usage
 
@@ -18,7 +18,7 @@ NOTE: lower_limit must be less than upper_limit
 
 ## Example 
 
-passwd_gen.py -n 10 -ll 19999 -ul 99999 -l 64
+<code> passwd_gen.py -n 10 -ll 19999 -ul 99999 -l 64 </code>
 
 ## Note
 
