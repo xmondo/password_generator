@@ -48,24 +48,24 @@ class GetInputs:
     @staticmethod
     def commandline_options():
         import argparse
-        import sys
+        from sys import exit
+        import colorize as clr
+        red = clr.Color('rx').set_color()
+        reset = clr.Color(None).set_color()
         parser = argparse.ArgumentParser()
-        parser.add_argument("number_of_passwords", type=int, help="number of passwords")
-        parser.add_argument("lower_limit", type=int, help="lower limit")
-        parser.add_argument("upper_limit", type=int, help="upper limit")
-        parser.add_argument("random_string_length", type=int, help="random string length")
+        parser.add_argument("-n", "--number", type=int, help="number of passwords")
+        parser.add_argument("-ll", "--lower_limit", type=int, help="lower limit")
+        parser.add_argument("-ul", "--upper_limit", type=int, help="upper limit")
+        parser.add_argument("-l", "--length", type=int, help="random string length")
         args = parser.parse_args()
-        number_of_passwords = args.number_of_passwords
-        lower_limit = args.lower_limit
-        upper_limit = args.upper_limit
-        random_string_length = args.random_string_length
-
-        if lower_limit > upper_limit:
-            print('lower limit must be less than upper limit')
-            # exit error 2: misuse of shell command
-            sys.exit(2)
+        if args.number is None:
+            parser.print_help()
+            exit()
+        if args.lower_limit > args.upper_limit:
+            print(red + str('lower limit must be less than upper limit'), reset)
+            exit()
         else:
-            return number_of_passwords, lower_limit, upper_limit, random_string_length
+            return args.number, args.lower_limit, args.upper_limit, args.length
 
 
 if __name__ == '__main__':
@@ -76,4 +76,3 @@ if __name__ == '__main__':
         RandomString(q, rl).random_secret()
     except Exception as err:
         print(err)
-
