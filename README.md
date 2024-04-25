@@ -12,7 +12,7 @@ pip install random-word
 
 ## Usage
 
-passwd_gen.py -n <number> -ll <lower_limit> -ul <upper_limit> -l <length>
+<code> passwd_gen.py -n <number> -ll <lower_limit> -ul <upper_limit> -l <length> </code>
                      
 NOTE: lower_limit must be less than upper_limit 
 
