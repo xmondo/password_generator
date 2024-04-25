@@ -1,6 +1,6 @@
 # PASSWORD GENERATOR 
 
-password_generator_opts.py is a script that generates a series of passwords using random words combined with alphanumeric characters. 
+password_gen.py is a script that generates a series of passwords using random words combined with alphanumeric characters. 
 
 ## Installation 
 
@@ -12,14 +12,14 @@ pip install random-word
 
 ## Usage
 
-passwd_generator_opts.py -n <number> -ll <lower_limit> -ul <upper_limit> -l <length>
+passwd_gen.py -n <number> -ll <lower_limit> -ul <upper_limit> -l <length>
                      
 NOTE: lower_limit must be less than upper_limit 
 
 ## Example 
 
-passwd_generator_opts.py -n 10 -ll 19999 -ul 99999 -l 64
+passwd_gen.py -n 10 -ll 19999 -ul 99999 -l 64
 
 ## Note
 
-The passwd_generator.py script is included for test purposes and uses hard-coded values for lower_limit, upper_limit, and random_string_length variables. 
+The passwd_test.py script is included for test purposes and uses hard-coded values for number, lower_limit, upper_limit, and random_string_length variables. 
