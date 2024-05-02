@@ -34,7 +34,6 @@ class RandomString:
         import colorize as clr
         red = clr.Color('rx').set_color()
         reset = clr.Color(None).set_color()
-
         count = 0
         while count != self.quantity:
             charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&'
