@@ -58,7 +58,7 @@ class GetInputs:
         parser.add_argument("-ul", "--upper_limit", type=int, help="upper limit")
         parser.add_argument("-l", "--length", type=int, help="random string length")
         args = parser.parse_args()
-        if args.number is None:
+        if args.number is None or args.lower_limit is None or args.upper_limit is None or args.length is None:
             parser.print_help()
             exit()
         if args.lower_limit > args.upper_limit:
